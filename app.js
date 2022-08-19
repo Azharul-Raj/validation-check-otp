@@ -19,3 +19,24 @@ document.getElementById('get-pin').addEventListener('click', function () {
     const display = document.getElementById('pin-display')
     display.value = pinNumber
 })
+
+// event listener for keypad
+document.getElementById('calculator').addEventListener('click', function (event) {
+    const number = event.target.innerText
+    const displayField = document.getElementById('type-number')
+    const previousNumber = displayField.value
+    if (number === 'C') {
+        displayField.value = ''
+    } 
+    else if (number === '<') {
+        const digits = previousNumber.split('')
+        digits.pop()
+        const escape = digits.join('')
+        displayField.value = escape
+    }
+    else {
+        const displayValue = previousNumber + number
+        displayField.value = displayValue
+
+    }
+})
