@@ -12,3 +12,10 @@ function getPin() {
        return getPin()
     }
 }
+
+// console.log(getPin())
+document.getElementById('get-pin').addEventListener('click', function () {
+    const pinNumber = getPin()
+    const display = document.getElementById('pin-display')
+    display.value = pinNumber
+})
